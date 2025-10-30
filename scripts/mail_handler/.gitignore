@@ -18,7 +18,6 @@ ENV/
 # OAuth credentials and tokens
 credentials.json
 token.json
-config.yaml
 
 # === IDE / OS ===
 .vscode/

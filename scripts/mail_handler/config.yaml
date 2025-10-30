@@ -1,0 +1,49 @@
+# Gmail Cleanup Configuration
+
+client_secrets_path: "credentials.json"
+token_path: "token.json"
+
+scopes:
+  - "https://www.googleapis.com/auth/gmail.modify"
+
+log_file: "gmail_cleanup.log"
+log_level: "INFO"
+
+filters:
+  Marketing:
+    keywords:
+      - "unsubscribe"
+      - "newsletter"
+      - "promotion"
+      - "sale"
+      - "offers"
+  Receipts:
+    keywords:
+      - "receipt"
+      - "order confirmation"
+      - "invoice"
+      - "payment confirmation"
+      - "your order"
+  Bills:
+    keywords:
+      - "statement"
+      - "bill"
+      - "due"
+      - "invoice due"
+      - "payment due"
+
+category_label_prefix: "Auto/"
+
+retention:
+  delete_unstarred_older_than_days: 30
+  folders_to_check:
+    - "INBOX"
+    - "Auto/Marketing"
+
+summary:
+  send: true
+  recipient: "ryan4125taylor@gmail.com"
+  subject_prefix: "[Gmail Cleanup]"
+
+dry_run: false
+max_messages_per_action: 500
