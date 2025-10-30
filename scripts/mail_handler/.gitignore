@@ -1,0 +1,35 @@
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.tmp
+*.bak
+
+# === Virtual environments ===
+.env/
+.venv/
+env/
+venv/
+ENV/
+
+# === Gmail Cleanup ===
+# OAuth credentials and tokens
+credentials.json
+token.json
+config.yaml
+
+# === IDE / OS ===
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# === Logs ===
+logs/
+*.log
+
+# === Cache ===
+.cache/
+*.cache
