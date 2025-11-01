@@ -1,0 +1,5 @@
+---
+- name: Shutdown server if running
+  ansible.builtin.shell:
+    cmd: '/home/ckserver/ckserver stop'
+    become_user: ckserver
