@@ -1,0 +1,22 @@
+---
+- name: Check if reboot is required
+  ansible.builtin.stat:
+    path: /var/run/reboot-required
+  register: reboot_flag
+
+- name: Reboot the system if required
+  ansible.builtin.reboot:
+    msg: "Reboot required after updates"
+    reboot_timeout: 600
+  when: reboot_flag.stat.exists
+
+- name: Confirm system is back online
+  ansible.builtin.wait_for_connection:
+    timeout: 300
+  when: reboot_flag.stat.exists
+
+- name: Log reboot status
+  ansible.builtin.debug:
+    msg: >
+      {{ 'Rebooted after updates.' if reboot_flag.stat.exists
+         else 'No reboot required.' }}

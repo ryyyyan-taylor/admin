@@ -1,0 +1,6 @@
+---
+- name: Start server if running
+  ansible.builtin.shell:
+    cmd: '/home/ckserver/ckserver start'
+  become: true
+  become_user: ckserver

@@ -1,0 +1,4 @@
+---
+- ansible.builtin.import_playbook: gameserver_shutdown.yml
+- ansible.builtin.import_playbook: update_apply.yml
+- ansible.builtin.import_playbook: gameserver_startup.yml

@@ -1,0 +1,6 @@
+---
+- name: Start Corekeeper server
+  hosts: corekeeper
+
+  roles:
+    - corekeeper_startup

@@ -1,0 +1,15 @@
+---
+- name: Check and apply updates
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  pre_tasks:
+    - name: Display target host
+      ansible.builtin.debug:
+        msg: "Running maintenance on {{ inventory_hostname }}"
+
+  roles:
+    - updates_check
+    - updates_run
+    - reboot_if_needed

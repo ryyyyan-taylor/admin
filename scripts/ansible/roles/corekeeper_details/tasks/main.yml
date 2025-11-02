@@ -1,0 +1,11 @@
+---
+- name: Get server details
+  ansible.builtin.shell:
+    cmd: '/home/ckserver/ckserver details'
+  become: true
+  become_user: ckserver
+  register: server_details
+
+- name: Display server details'
+  ansible.builtin.debug:
+    var: server_details
